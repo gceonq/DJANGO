@@ -1,0 +1,4 @@
+Here all the functionalities are done by using django's inbuilt class based views
+http://127.0.0.1:8000/login for login
+http://127.0.0.1:8000/logour for logout
+after login no redirection page was implemented you'll get page not found error
