@@ -1,0 +1,48 @@
+{%extends 'testapp/base.html'%}
+{%load crispy_forms_tags%}
+{%block title_block%}Login Page{%endblock%}
+{%block content%}
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Gcorp</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/testapp">Home</a> </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/accounts/register">Register</a> </li>&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+    </ul>
+</nav>
+
+
+
+<form method="post">
+  <div class="container" id="loginform">
+      <div class="">
+          {%csrf_token%}
+          <!--{{form.as_p}}-->
+          <p><label for="id_username">Username / Email:</label> <input type="text" name="username" autofocus required id="id_username" maxlength="254" /></p>
+          <p><label for="id_password">Password  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+            </label> <input type="password" name="password" required id="id_password" /></p>
+          <p><a href="/testapp/resetpassword">Forgot password? </a><p>
+        <button class="btn btn-primary" type="submit">Login</button>
+
+          <br>
+  <p><strong>-- OR --</strong></p>
+  <h3>Login with<a href="{% url 'social:begin' 'google-oauth2' %}"> Google </a>/
+    <a href="{% url 'social:begin' 'github' %}">Github</a></h3>
+
+
+      </div>
+
+  </div>
+
+
+</form>
+
+{%endblock%}

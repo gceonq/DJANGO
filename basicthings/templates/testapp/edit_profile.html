@@ -1,0 +1,38 @@
+{%extends 'testapp/base.html'%}
+{%load crispy_forms_tags%}
+{%block title_block%}Edit profile{%endblock%}
+{%block content%}
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Gcorp</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/testapp">Home</a> </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Hi {{user.username}}</a> </li>&nbsp&nbsp&nbsp&nbsp
+        <li><a href="/testapp/profile">Profile</a> </li>&nbsp&nbsp&nbsp&nbsp
+
+        <li><a href="/accounts/logout">Logout</a> </li>&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    </ul>
+</nav>
+
+ <div class="container">
+     <div class="jumbotron">
+
+     <form method="post">
+         {%csrf_token%}
+         {{form|crispy}}
+
+         <button type="submit">Submit</button>
+     </form>
+     <br>
+     </div>
+
+
+ </div>
+
+{%endblock%}

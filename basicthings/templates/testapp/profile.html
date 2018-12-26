@@ -1,0 +1,54 @@
+{%extends 'testapp/base.html'%}
+{%block title_block%}Profile{%endblock%}
+{%block content%}
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Gcorp</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/testapp">Home</a> </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Hi {{user.username}}</a> </li>&nbsp&nbsp&nbsp&nbsp
+        <li><a href="/testapp/edit">Edit Profile</a> </li>&nbsp&nbsp&nbsp&nbsp
+        <li><a href="/accounts/logout">Logout</a> </li>&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+    </ul>
+</nav>
+
+
+ <div class="container">
+     <div class="jumbotron">
+
+     <form method="post">
+         <div class="col-xs-12">
+             {% if messages%}
+             {% for message in messages %}
+             <div class="" role="alert">
+                 <center>{{message}}</center>
+             </div>
+             {%endfor%}
+             {%endif%}
+         </div>
+         <h1>Profile </h1>
+        <p>Username&nbsp&nbsp&nbsp: {{user}} </p>
+        <p>First name &nbsp : {{user.first_name}} </p>
+        <p>Last name &nbsp&nbsp: {{user.last_name}} </p>
+        <p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  : {{user.email}} </p>
+
+     </form>
+     <br>
+
+     </div>
+
+ </div>
+
+
+
+
+{%endblock%}

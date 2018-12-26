@@ -1,0 +1,34 @@
+{%extends 'testapp/base.html'%}
+{%block title_block%}Thanks for Signup{%endblock%}
+{%block content%}
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Gcorp</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/testapp">Home</a> </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/testapp/login">Login</a> </li>&nbsp&nbsp&nbsp&nbsp
+        <li><a href="/testapp/register">Register</a> </li>&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+    </ul>
+</nav>
+<div class="container">
+        <div class="jumbotron">
+
+<h1>Thanks for Signup</h1>
+  <h2>
+      Your account is now activated </h2>
+<h3>
+    Click here to log in    <a href="accounts/login">Login</a>
+</h3>
+
+           </div>
+    </div>
+{%endblock%}

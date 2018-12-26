@@ -1,0 +1,43 @@
+{%extends 'testapp/base.html'%}
+{%block title_block%}Registration Page{%endblock%}
+{%block content%}
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Gcorp</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/testapp">Home</a> </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+                <li><a href="/accounts/login">Login</a> </li>
+                <li><a href="#">      </a> </li>
+
+
+
+    </ul>
+</nav>
+<div class="container">
+        <div class="jumbotron">
+
+<form method="post" >
+
+            {%csrf_token%}
+    {{form.as_p}}
+    <span class="helptext">
+        <ul>
+            <li>Your password can&#39;t be too similar to your user name.</li>
+            <li>Your password must contain at least 8 characters.</li>
+            <li>Your password can&#39;t be entirely numeric.</li>
+        </ul>
+    </span>
+    <button class="btn btn-primary" type="submit">Register</button>
+
+
+
+</form>
+              </div>
+    </div>
+
+{%endblock%}
